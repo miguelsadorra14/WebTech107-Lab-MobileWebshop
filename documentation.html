@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webtech107 Documentation</title>
+</head>
+<body>
+    <header>
+        <h1>API Documentation</h1>
+        <p>Based on simple REST principles, our Web API enpoints return JSON metadata about smart phone specifications.</p>
+        <p>The base address of this API is <a href="http://localhost:3000/">http://localhost:3000/</a>. The API provides a set of endpoints, each with its own unique path.</p>
+    </header>
+
+    <!--REQUESTS DIV-->
+    <div>
+        <h2>REQUESTS</h2>
+        <p>This API is based on REST principles, thus, data resources are accessed via standard HTTPS requests in UTF-8 format to an API endpoint.</p>
+        <p>Where possible, this API uses appropriate HTTP verbs for each action:</p>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>METHOD</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>GET</td>
+                    <td>Retrieves resources from the database</td>
+                </tr>
+                <tr>
+                    <td>POST</td>
+                    <td>Adds additional resources to the database</td>
+                </tr>
+                <tr>
+                    <td>PUT</td>
+                    <td>Updates resources in the database</td>
+                </tr>
+                <tr>
+                    <td>DELETE</td>
+                    <td>Deletes resources in the database</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <br/>
+
+    <!--ENDPOINTS DIV-->
+    <div>
+        <h2>ENDPOINTS</h2>
+        <p> The following endpoints will determine the actions of the Web API:</p>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>PATH</th>
+                    <th>DESCRIPTION</th>
+                    <th>HTTP METHOD</th>
+                    <th>CRUD FUNCTION</th>
+                </tr>                
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="http://localhost:3000/phones">http://localhost:3000/phones</a></td>
+                    <td>Retrieves all phones from the database including all specifications such as brand, model, image, os, and screensize.</td>
+                    <td>GET - safe and idempotent</td>
+                    <td>Retrieve</td>
+                </tr>
+                <tr>
+                    <td><a href="http://localhost:3000/phones/:id">http://localhost:3000/phones/:id</a></td>
+                    <td>Retrieves specific phone from the database based on a given id.</td>
+                    <td>GET - safe and idempotent</td>
+                    <td>Retrieve</td>
+                </tr>
+                <tr>
+                    <td><a href="http://localhost:3000/add-phone">http://localhost:3000/add-phone</a></td>
+                    <td>Adds new phone to database with specifications such as brand, model, image, os, and screensize.</td>
+                    <td>POST - not idempotent</td>
+                    <td>Create</td>
+                </tr>
+                <tr>
+                    <td><a href="http://localhost:3000/remove-phone">http://localhost:3000/remove-phone</a></td>
+                    <td>Removes all phones from the database.</td>
+                    <td>DELETE - idempotent but not safe</td>
+                    <td>Delete</td>
+                </tr>
+                <tr>
+                    <td><a href="http://localhost:3000/remove-phone/:id">http://localhost:3000/remove-phone/:id</a></td>
+                    <td>Removes a phone from the database with a specific id that it is referring to.</td>
+                    <td>DELETE - idempotent but not safe</td>
+                    <td>Delete</td>
+                </tr>
+                <tr>
+                    <td><a href="http://localhost:3000/update/:id">http://localhost:3000/update/:id</a></td>
+                    <td>Updates a phone from the database with a specific id that it is referring to.</td>
+                    <td>PUT - idempotent but not safe</td>
+                    <td>Update</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br/>
+
+    <!--INSTRUCTIONS DIV-->
+    <div>
+        <h2>DEVELOPER INSTRUCTIONS</h2>
+        <p>The following instructions will elaborate on how to use the database and what data types we will be using.</p>
+        <p>For this database, we will be using the JSON format, where developers can input items through an API tester such as Postman.</p>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Endpoint</th>
+                    <th>Example Input</th>
+                    <th>Example Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>GET</td>
+                    <td>http://localhost:3000/phones</td>
+                    <td>...</td>
+                    <td>{<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"id" : 1,<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"brand" : "Apple",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"model" : "iPhone 13",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"image" : "imageURL",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"os" : "iOS",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"screensize" : 5.65,<br/>
+                        } <br/>
+                        {<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"id" : 2,<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"brand" : "Samsung",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"model" : "S21 Ultra",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"image" : "imageURL",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"os" : "Android",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"screensize" : 6.85<br/>
+                        } <br/>
+                        {<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"id" : 3,<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"brand" : "Apple",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"model" : "iPhone 13 Pro Max",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"image" : "imageURL",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"os" : "iOS",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"screensize" : 7.65<br/>
+                        } <br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>GET</td>
+                    <td>http://localhost:3000/phones/3 </td>
+                    <td>...</td>
+                    <td>
+                        {<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"id" : 3,<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"brand" : "Apple",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"model" : "iPhone 13 Pro Max",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"image" : "imageURL",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"os" : "iOS",<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"screensize" : 7.65<br/>
+                        } <br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>POST</td>
+                    <td>http://localhost:3000/add-phone </td>
+                    <td>{<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"brand" : "Apple",<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"model" : "iPhone 13 Pro Max",<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"image" : "imageURL",<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"os" : "iOS",<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"screensize" : 7.65<br/>
+                    } <br/></td>
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <td>DELETE</td>
+                    <td>http://localhost:3000/remove-phone </td>
+                    <td>...</td>
+                    <td>{<br/><br/>}</td>
+                </tr>
+                <tr>
+                    <td>DELETE</td>
+                    <td>http://localhost:3000/remove-phone/1 &nbsp;</td>
+                    <td>...</td>
+                    <td>{<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"id" : 2<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"brand" : "Samsung",<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"model" : "S21 Ultra",<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"image" : "imageURL",<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"os" : "Android",<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"screensize" : 6.85<br/>
+                    } <br/>
+                    {<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"id" : 3,<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"brand" : "Apple",<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"model" : "iPhone 13 Pro Max",<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"image" : "imageURL",<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"os" : "iOS",<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"screensize" : 7.65<br/>
+                    } <br/></td>
+                </tr>
+                <tr>
+                    <td>PUT</td>
+                    <td>http://localhost:3000/remove-phone </td>
+                    <td>{<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"brand" : "Apple",<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"model" : "iPhone 13 Pro Max",<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"image" : "imageURL",<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"os" : "iOS",<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"screensize" : 7.65<br/>
+                    } <br/></td>
+                    <td>...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

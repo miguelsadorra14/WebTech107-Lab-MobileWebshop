@@ -1,0 +1,305 @@
+<!-- 
+    We have tried it with the browsers Google Chrome, Microsoft Edge, Opera Internet Browser, Firefox and 
+    our webpage did not have any inconsistencies. We used -webkit for Safari support as well.
+
+    The only problem we had with compatibility is the abbr element which does not work on Internet Explorer.
+-->
+
+<!--
+    We used media queries for both smartphones and browsers with smaller widths such as a tablet
+    we adjusted font sizes accordingly and all our margins and displays were adjusted according to size
+-->
+
+<!--
+    We had trouble with the horizontal scrollbar and tried to use the markup overflow-x: hidden; 
+    but this markup altered our printing which resulted in the group editing it out.
+-->
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="keywords" content="Phone, Buy, Shop">
+        <meta name="author" content="Miguel Sadorra, Lara Ichli">
+        <title>Mobile Phone Webshop</title>
+        <link rel="stylesheet"  href="main.css" type="text/css">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="main.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <!-- Navigation bar -->
+        <header id="header">
+            <h1>Lara and Miguel's Phone Store</h1>
+            <nav class="navBar">
+                <ul class="webMenu">
+                    <li><a href="#home" class="navItem">Home</a></li>
+                    <li><a href="#products" class="navItem">Products</a></li>
+                    <li><a href="#bestSeller" class="navItem" >Best Sellers</a></li>
+                    <li><a href="#support" class="navItem">Support</a></li>
+                    <li><a href="#contact" class="navItem">Contact us</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- banner photo added in css -->
+        <div class="banner"></div>
+
+        <section id="home">
+            <h2>HOME</h2>
+
+            <div class="about">
+                <p><abbr title="Lara and Miguel">LM</abbr> Phone Store, founded in 2006, was founded by Lara Ichli and Miguel Sadorra. It is a company that aims to provide the best quality products to its customers.
+                It offers the most recently released smartphones in the market and is known for its exceptional post sales services. The company also offers great deals on older
+                models of smartphones.</p><br/>
+                <p>Since its start in 2006, the company has built multiple branches around the Netherlands. It has branches in Amsterdam, Utrecht, Hoofddorp, and Arnhem.
+                </p>
+            </div>
+            <!-- lists down all of the stores branches using lists -->
+            <div class="locations">
+                <ol>
+                    <li><strong>Amsterdam:</strong>
+                        <dl>
+                            <dt>Address:</dt>
+                            <dd><em>Gillis van Ledenberchstraat 112, 1052 VK Amsterdam</em></dd>
+                            <dt>Phone Number:</dt>
+                            <dd><em>06-63048257</em></dd>
+                        </dl>
+                    </li>
+                    <li><strong>Utrecht: </strong>
+                        <dl>
+                            <dt>Address:</dt>
+                            <dd><em>Burgemeester Norbruislaan 522, 3555 ES Utrecht</em></dd>
+                            <dt>Phone Number:</dt>
+                            <dd><em>06-87376589</em></dd>
+                        </dl>
+                    </li>
+                    <li><strong>Hoofddorp: </strong>
+                        <dl>
+                            <dt>Address:</dt>
+                            <dd><em>Beethovenstraat 147, 1077 JD Amsterdam</em></dd>
+                            <dt>Phone Number:</dt>
+                            <dd><em>06-58205846</em></dd>
+                        </dl>
+                    </li>
+                    <li><strong>Arnhem: </strong>
+                        <dl>
+                            <dt>Address:</dt>
+                            <dd><em>Klarendalseweg 137, 6822 GG Arnhem</em></dd>
+                            <dt>Phone Number:</dt>
+                            <dd><em>06-38958454</em></dd>
+                        </dl>
+                    </li>
+                </ol>
+
+            </div>
+        </section>
+
+        <!--shows borderless table containing all of our products in the shop-->
+        <div id="products">
+            <h2>PRODUCTS</h2>
+            <table class="products">
+                <thead id="thead1">
+                    <tr>
+                        <th>Brand/ Model</th>
+                        <th>Image</th>
+                        <th>Price</th>
+                        <th>Camera</th>
+                    </tr>
+                </thead>
+                
+                <tbody id="tableBody1">
+                    <tr>
+                        <td>iPhone 13 Pro Max</td>
+                        <td>
+                            <figure>
+                                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-pro-graphite-select?wid=470&hei=556&fmt=png-alpha&.v=1631652957000" alt="ip13ProMax">
+                                <figcaption><h3>iPhone 13 Pro Max</h3></figcaption>
+                            </figure>
+                        </td>
+                        <td>&euro; 1259</td>
+                        <td>12-megapixel</td>
+                    </tr>
+                    <tr>
+                        <td>iPhone 13 Pro</td>
+                        <td>
+                            <figure>
+                                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-pro-silver-select?wid=470&hei=556&fmt=png-alpha&.v=1631652954000" alt="ip13Pro">
+                                <figcaption><h3>iPhone 13 Pro</h3></figcaption>
+                            </figure>
+                        </td>
+                        <td>&euro; 1159</td>
+                        <td>12-megapixel</td>
+                    </tr>
+                    <tr>
+                        <td>iPhone 13</td>
+                        <td>
+                            <figure>
+                                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-pink-select-2021?wid=470&hei=556&fmt=png-alpha&.v=1629842709000" alt="ip13">
+                                <figcaption><h3>iPhone 13</h3></figcaption>
+                            </figure>
+                        </td>
+                        <td>&euro; 0909</td>
+                        <td>12-megapixel</td>
+                    </tr>
+                    <tr>
+                        <td>Samsung S21 Ultra</td>
+                        <td>
+                            <figure>
+                                <img src="https://images.samsung.com/is/image/samsung/p6pim/nl/galaxy-s21/gallery/nl-galaxy-s21-ultra-5g-g988-sm-g998bzkdeub-368997408?$684_547_PNG$" alt="S21Ultra">
+                                <figcaption><h3>Samsung S21 Ultra</h3></figcaption>
+                            </figure>
+                        </td>
+                        <td>&euro; 0609</td>
+                        <td>25-megapixel</td>
+                    </tr>
+                    <tr>
+                        <td>Samsung Z Fold 3</td>
+                        <td>
+                            <figure>
+                                <img src="https://images.samsung.com/is/image/samsung/p6pim/levant/2108/gallery/levant-galaxy-z-fold3-f926-5g-sm-f926bzkdmea-thumb-477353619" alt="zFold3">
+                                <figcaption><h3>Samsung Z Fold 3</h3></figcaption>
+                            </figure>
+                        </td>
+                        <td>&euro; 1743</td>
+                        <td>15-megapixel</td>
+                    </tr>
+                    <tr>
+                        <td>Samsung Z Flip 3</td>
+                        <td>    
+                            <figure>
+                                <img src="https://images.samsung.com/is/image/samsung/p6pim/nl/sm-f711bzkbeub/gallery/nl-galaxy-z-flip3-f711-5g-404588-sm-f711bzkbeub-thumb-512954166" alt="zFlip3">
+                                <figcaption><h3>Samsung Z Flip 3</h3></figcaption>
+                            </figure>
+                        </td>
+                        <td>&euro; 0848</td>
+                        <td>17-megapixel</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!--best seller section-->
+        <div class ="bestSeller" id="bestSeller">
+            <h2 id="bestSellerPhones">BEST SELLERS</h2><br/>
+            <form action="https://wt.ops.labs.vu.nl/api22/b442b635" method="post" id="formSubmit">
+                <table class="bestSellers" id="bestSellers">
+                    <caption>Best Selling Products</caption>
+                    <thead id="thead">
+                        <tr>
+                            <th>Brand</th>
+                            <th>Model</th>
+                            <th>Image</th>
+                            <th>OS</th>
+                            <th>Screen Size</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr>
+                            <td>Samsung</td>
+                            <td>S21 Ultra 5G</td>
+                            <td><img src="https://images.samsung.com/is/image/samsung/p6pim/nl/galaxy-s21/gallery/nl-galaxy-s21-ultra-5g-g988-sm-g998bzkdeub-368997408?$684_547_PNG$" alt="S21Ultra"></td>
+                            <td>Android 11</td>
+                            <td>6.8 inches</td>
+                        </tr>
+                        <tr>
+                            <td>Apple</td>
+                            <td>iPhone 13 Pro Max</td>
+                            <td><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-pro-graphite-select?wid=470&hei=556&fmt=png-alpha&.v=1631652957000" alt="ip13ProMax"></td>
+                            <td>iOS 15.2</td>
+                            <td>6.68 inches</td>
+                        </tr>
+                        <tr>
+                            <td>Apple</td>
+                            <td>iPhone 13</td>
+                            <td><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-pink-select-2021?wid=470&hei=556&fmt=png-alpha&.v=1629842709000" alt="ip13"></td>
+                            <td>iOS 15.2</td>
+                            <td>6.06 inches</td>
+                        </tr>
+                        
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>
+                                <label for="brand">Brand:</label><br>
+                                <input type="text" name="brand" id="brand" required>
+                            </td>
+
+                            <td>
+                                <label for="model">Model:</label><br>
+                                <input type="text" name="model" id="model" required>
+                            </td>
+
+                            <td>
+                                <label for="pic">Picture:</label><br>
+                                <input type="url" name="image" id="pic" required>
+                            </td>
+
+                            <td>
+                                <label for="os">OS:</label><br>
+                                <input type="text" name="os" id="os" required>
+                            </td>
+
+                            <td>
+                                <label for="screenS">Screen Size:</label><br>
+                                <input type="number" name="screensize" id="screenS" required>
+                                <input type="submit" value="Add Product" id="submitForm">
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </form>
+        </div>
+
+        <!-- repair issues section -->
+        <div class="support" id="support">
+        <h2>GET SUPPORT</h2>
+            <p>Fill out the contact form for repair issues!</p>
+            <p>
+                <label for="first">Your Name:</label><br>
+                <input type="text" id="first" name="first" placeholder="Ex:Lara Ichli" required>
+            </p>
+            <p>
+                <label for="first">E-mail Adress:</label><br>
+                <input type="text" id="mail" name="mail" placeholder="Ex:laraicli2@gmail.com" required>
+            </p>
+            <p>
+                <label for="issue">Issue Title:</label><br>
+                <input type="text" id="issue" name="issue" placeholder="Ex:Front camera not working" required>
+            </p>
+            <p>
+                <label for="description">Description:</label><br>
+                <textarea id="description" placeholder="Add description..."></textarea><br>
+            </p>
+            <input type="submit" value="Send Support Request">
+        </div>
+
+        <!-- contact us section -->
+        <section class="contact">
+            <h2 id="contact">CONTACT US</h2>
+            <p>Reach out to us via..</p>
+            <div>
+                <p>
+                    <strong><em>Call Center: </em></strong>
+                </p>
+                <ul>    
+                    <li>
+                        <a href="tel:+31627154855" target="_blank">31 6271 54855</a>
+                    </li>
+                </ul>
+                <p>
+                    <strong><em>E mail: </em></strong>
+                </p>
+                <ul>
+                    <li>
+                        <a href="mailto:webshop@gmail.com" target="_blank">webshop@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            <pre> &copy;     Copyright 2021 <abbr title="Lara and Miguel">LM</abbr> Phone store</pre>
+        </footer>
+    </body>
+</html>
